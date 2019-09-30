@@ -84,6 +84,29 @@ class Hero():
             print(opponent.name, "has won")
         elif self_alive == False and opp_alive == False:
             print("Both dead")
+class Weapon(Ability):
+    def attack(self):
+        return random.randint(self.max_damage//2, self.max_damage)  
+class Team():
+    def __init__(self, name):
+        self.name = name
+        self.heros = [] 
+    def remove_hero(self, name):
+        if name in self.heros:
+            return self.heros.remove(name)
+        else:
+            return 0
+    def view_all_heros(self):
+        for hero in self.heros:
+            print(hero.name)
+
+    def add_hero(self, hero):
+        self.hero = hero
+        self.heros.append(hero)
+    
+
+        
+
 
 
 
